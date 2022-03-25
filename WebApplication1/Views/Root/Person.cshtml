@@ -1,0 +1,31 @@
+﻿@model List<Domain.Models.Person>;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>title</title>
+</head>
+
+<body>
+
+
+<button id="bukvamy">Fetch</button>
+<p id="data">Data tuta</p>
+@*<h1 align="center">@Model.Name</h1>*@
+
+<script>
+        const data = document.getElementById("data");
+        function f() { fetch("api/v1").then(x => x.json()).then(d => data.innerHTML = JSON.stringify(d)) }
+
+        document.getElementById("bukvamy").onclick = f
+        function f1() { fetch("api/v1",{
+                                          method: 'POST',
+                                          body: JSON.stringify(data),
+                                          headers: {'content-type': 'application/json'},
+                                        }).then(x => x.json()).then(d => data.innerHTML = JSON.stringify(d)) }
+    </script>
+</body>
+
+
+</html>
