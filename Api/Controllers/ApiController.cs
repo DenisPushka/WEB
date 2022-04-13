@@ -17,9 +17,19 @@ namespace Api.Controllers
             _personRepository = personRepository;
         }
 
-        // [HttpGet]
-        // public async Task<Person[]> Get() =>
-        //    Task.FromResult<IActionResult>(Ok(await _personRepository.ToArrayAsinc()));
+        [HttpGet("{id:guid}")]
+        public IActionResult GetContact([FromRoute] Guid id)
+        {
+            return Ok(_personRepository.GetPerson(id));
+        }
+        
+        [HttpGet]
+        public async Task<Person[]> Get()
+        {
+            return await _personRepository.GetArrayPerson();
+        }
+
+        // Task.FromResult<IActionResult>(Ok(await _personRepository.GetArrayPerson()));
 
         // [HttpGet("SortForNameDenis")]
         // public async Task<IActionResult> SortForNameDenis() => Ok(SortName());
@@ -32,7 +42,6 @@ namespace Api.Controllers
             // {
             //     Id = person.Id,
             // };
-
             return await _personRepository.AddPerson(person);
         }
 

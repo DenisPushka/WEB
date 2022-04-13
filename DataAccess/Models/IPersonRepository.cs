@@ -12,6 +12,7 @@ namespace DataAccess.Models
         Task<List<Person>> DeletePerson(Guid id);
 
         Task<List<Person>> InsertPerson(Person person);
-        Task<Person[]> ToArrayAsinc();
+        Task<Person[]> GetArrayPerson();
+        Person GetPerson(Guid id);
     }
 }

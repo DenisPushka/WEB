@@ -1,9 +1,5 @@
-using System;
-using DataAccess;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using WebApplication1.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1
 {

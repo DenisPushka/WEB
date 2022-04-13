@@ -65,3 +65,7 @@ C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\Dat
 C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\Domain.pdb
 C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\Api.dll
 C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\Api.pdb
+C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\App\package-lock.json
+C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\App\package.json
+C:\Users\User\RiderProjects\WebApplication1\WebApplication1\bin\Debug\net5.0\App\tsconfig.json
+C:\Users\User\RiderProjects\WebApplication1\WebApplication1\obj\Debug\net5.0\Razor\Views\Root\Index.cshtml.g.cs

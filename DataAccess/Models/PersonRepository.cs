@@ -15,12 +15,26 @@ namespace DataAccess.Models
         {
             _db = applicationContext;
         }
-        
+
         public async Task<List<Person>> AddPerson(Person person)
         {
+            if (person.Post == null)
+            {
+                var student = _db.Posts;
+                foreach (var post in student)
+                    if (post.Name.Equals("Student"))
+                    {
+                        person.Post = post;
+                        break;
+                    }
+            }
+
+            if (person.Name.Equals(""))
+                return await _db.Persons.ToListAsync();
+            
             _db.Persons.Add(person);
             await _db.SaveChangesAsync();
-           return await _db.Persons.ToListAsync();
+            return await _db.Persons.ToListAsync();
         }
 
         public async Task<List<Person>> DeletePerson(Guid id)
@@ -34,7 +48,7 @@ namespace DataAccess.Models
                     break;
                 } // + создавать новый тип массив и их коливечество
             }
-            
+
             return await _db.Persons.ToListAsync();
         }
 
@@ -54,6 +68,24 @@ namespace DataAccess.Models
             }
 
             return await _db.Persons.ToListAsync();
+        }
+
+        public Task<Person[]> GetArrayPerson()
+        {
+            return _db.Persons.ToArrayAsync();
+        }
+
+        public Person GetPerson(Guid id)
+        {
+            foreach (var person in _db.Persons)
+            {
+                if (person.Id == id)
+                {
+                    return person;
+                }
+            }
+
+            return new Person();
         }
     }
 }

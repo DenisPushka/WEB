@@ -27,4 +27,11 @@
       <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <TypeScriptCompile Include="App\src\api\contactsApi.ts" />
+      <TypeScriptCompile Include="App\src\components\App.tsx" />
+      <TypeScriptCompile Include="App\src\entries\plain.tsx" />
+      <TypeScriptCompile Include="App\src\global.d.ts" />
+    </ItemGroup>
+
 </Project>
